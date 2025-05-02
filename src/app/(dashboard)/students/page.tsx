@@ -1,15 +1,12 @@
 "use client";
-import AddModal from "@/components/molecules/Modals/AddModal/AddModal";
-// import AddModal from "@/components/molecules/Modals/AddModal/AddModal";
-import Modal from "@/components/molecules/Modals/ModalBackground";
 import StudentsTable from "@/components/organisms/StudentsTable";
 import { Button, Input } from "@chakra-ui/react";
-import React, { useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 
 const Page = () => {
-  const typeRef = useRef<"add" | "update">("add");
-  const [open, setOpen] = useState(false);
+  const router = useRouter();
   const [searchTerm, setSearchTerm] = useState("");
   const [filterType, setFilterType] = useState<"major" | "gpa" | "">("");
   const [filterValue, setFilterValue] = useState("");
@@ -77,8 +74,9 @@ const Page = () => {
 
           <Button
             onClick={() => {
-              setOpen(true);
-              typeRef.current = "add";
+              router.push("/students/new");
+              // setOpen(true);
+              // typeRef.current = "add";
             }}
             leftIcon={<FaPlus size={20} color="white" />}
             className="flex items-center "
@@ -92,9 +90,6 @@ const Page = () => {
           filterType={filterType}
           filterValue={filterValue}
         />
-        <Modal open={open} setOpen={() => setOpen(false)}>
-          <AddModal type={typeRef.current} setOpen={() => setOpen(false)} />
-        </Modal>
       </div>
     </div>
   );
