@@ -21,7 +21,7 @@ const Page = () => {
         <div className="mb-4 flex flex-col lg:flex-row items-center justify-between"></div>
         <div className="flex lg:flex-row flex-col lg:items-center gap-y-4 justify-between gap-x-2.5">
           {/* Search & Filter Controls */}
-          <div className="flex flex-col lg:flex-row lg:items-center gap-4  w-full mt-12">
+          <div className="flex flex-col lg:flex-row lg:items-center gap-4  w-full lg:mt-36 mt-8">
             {/* Search Input */}
             <span className="w-full lg:w-96">
               <Input
