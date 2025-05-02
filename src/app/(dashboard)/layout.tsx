@@ -6,9 +6,9 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex min-h-screen font-urbanist">
       <SideMenu />
-      <section className="flex-1 lg:ml-64">
+      <section className="flex-1 lg:ml-64 overflow-x-hidden!">
         <NavBar />
-        <main className="px-3 xl:px-9 py-3 xl:py-6">{children}</main>
+        <main className="px-3 xl:px-9 py-3 xl:py-6 ">{children}</main>
       </section>
     </div>
   );

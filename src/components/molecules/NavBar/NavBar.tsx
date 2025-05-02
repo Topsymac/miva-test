@@ -25,8 +25,8 @@ const NavBar = () => {
   };
 
   return (
-    <div className="sticky top-0 z-10 flex h-16 items-center justify-between bg-white px-4 shadow-lg xl:h-[88px] xl:px-9">
-      <div className="text-[20px] font-bold flex items-center gap-2 pl-10 lg:pl-0">
+    <div className="sticky top-0 z-10 flex h-16 items-end justify-end lg:items-center lg:justify-between bg-white px-4 shadow-lg xl:h-[88px] xl:px-9">
+      <div className="text-[20px] font-bold hidden items-center gap-2 pl-10 lg:pl-0 lg:flex">
         {pathname.startsWith("/students/") && (
           <Link href={`/students`}>
             <svg
@@ -58,13 +58,13 @@ const NavBar = () => {
         </svg>
         <p>{getPageTitle()}</p>{" "}
       </div>
-      <div className="flex items-center justify-between">
+      <div className="flex items-end justify-end">
         <Image
           src="/images/icons/user_profile.svg"
           alt="User Profile"
           width={500}
           height={500}
-          className="h-8 w-8 rounded-full object-cover xl:h-11 xl:w-11"
+          className="h-8 w-8 rounded-full object-cover xl:h-11 xl:w-11 pb-3"
           priority
         />
       </div>
